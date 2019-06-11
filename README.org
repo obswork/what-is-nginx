@@ -1,0 +1,66 @@
+* WHAT IS NGINX
+
+
+Yes, that is the question under investigation. 
+
+Wikipedia says:
+
+    Nginx ( /ˌɛndʒɪnˈɛks/ EN-jin-EKS[8]) (stylized as NGINX or nginx) is a web
+    server which can also be used as a reverse proxy, load balancer, [...] and
+    HTTP cache.
+    
+Huh, okay.
+
+Well, what's a reverse proxy? A load balancer? An HTTP cache? Oh, my.
+
+
+* Reverse Proxy
+
+Wikipedia:
+
+    [A reverse proxy is a]...server...that acts as an intermediary for requests
+    from clients seeking resources from other servers.
+    
+In other words: a middleman (read: middleperson) between the world and some origin server.
+
+
+* Load Balancer
+
+What about a load balancer? 
+
+Nginx: https://www.nginx.com/resources/glossary/load-balancing/
+
+    Load balancing refers to efficiently distributing incoming network traffic
+    across a group of backend servers, also known as a server farm or server
+    pool.
+    
+    ...
+
+
+    * Distributes client requests or network load efficiently across multiple servers
+    * Ensures high availability and reliability by sending requests only to servers that are online
+    * Provides the flexibility to add or subtract servers as demand dictates
+      
+      
+* HTTP Cache
+  
+Finally, what exactly is an HTTP cache? 
+
+Nginx: https://www.nginx.com/blog/nginx-caching-guide/
+
+    A ... cache sits in between a client and an “origin server”, and saves
+    copies of all the content it sees. If a client requests content that the cache
+    has stored, it returns the content directly without contacting the origin
+    server. This improves performance as the content cache is closer to the client,
+    and more efficiently uses the application servers because they don’t have to do
+    the work of generating pages from scratch each time.
+
+    
+In summary, Nginx is a special kind of server that can:
+   * proxy requests to and from other servers
+   * cache content & reduce backend traffic
+   * balance traffic across multiple backend servers
+
+..and so much more! 
+
+See: https://www.nginx.com/resources/wiki/ for additional resources and example configurations.
