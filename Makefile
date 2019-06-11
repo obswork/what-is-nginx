@@ -13,17 +13,17 @@ run:                               ## Run my-nginx container on port 9200
 	@docker run -dit --rm --name my-nginx -v $(PWD)/nginx:/etc/nginx \
 		-v $(PWD)/static:/static -p=9200:80 my-nginx
 
-shell:
+shell:                             ## Run bash shell in running my-nginx container
 	@docker exec -it my-nginx /bin/bash
 
-reload:
+reload:                            ## Reload nginx configs w/in bash container
 	@docker exec -it my-nginx nginx -s reload
 
-stop:
+stop:                              ## Stop my-nginx container
 	@docker stop my-nginx
 
-load-test:
+load-test:                         ## Test site load w/ 10K requests and 10 open connections
 	@docker exec -it my-nginx ab -n 1000 -c 10 'http://localhost:80/'
 
-logs:
+logs:                              ## Tail container nginx logs
 	@docker exec -it my-nginx tail -f /var/log/nginx/access.log
