@@ -21,3 +21,9 @@ reload:
 
 stop:
 	@docker stop my-nginx
+
+load-test:
+	@docker exec -it my-nginx ab -n 1000 -c 10 'http://localhost:80/'
+
+logs:
+	@docker exec -it my-nginx tail -f /var/log/nginx/access.log
